@@ -1,0 +1,261 @@
+body{
+    background-color: #000000;
+    color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 2px;
+}
+
+#container {
+    text-align: center;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.ikona {
+    margin: 5px;
+    width: 140px;
+    float: left;
+    color: forestgreen;
+}
+#header{
+    margin-top: 5px;
+    background-color: rgb(1, 104, 61) ;
+    border-radius: 5px; 
+}
+#tytul > a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#nav{
+    margin-top: 15px;
+    padding: 2px;
+    
+}
+#tytul{
+    display: block;
+    float: left;
+    width: 860px;
+    font-family: 'Chau Philomene One', sans-serif;
+    font-size: 85px;
+    text-align: center;
+    padding: 20px;
+}
+
+.pozycja{
+    background-color: #001b04;
+    float: left;
+    width: 195px;
+    border-radius: 5px;
+    margin: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pozycja:hover
+{
+    background-color: rgb(24, 122, 0);
+
+}
+
+.pozycja > a
+{
+    display: block;
+    font-size: 20px;
+    font-family: 'Chau Philomene One', sans-serif;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+#article
+{
+    font-family: 'Lato', sans-serif;
+    margin-top: 15px;
+    background-color: #1b1b1b;
+    width: 1100px;
+    padding: 50px;
+    font-size: 22px;
+    padding-top: 20px;
+    border-radius: 5px; 
+    text-align: justify;
+    min-height: 680px;
+    margin-bottom: 50px;
+}
+
+#footer
+{
+    margin-top: 10px;
+    background-color: #1f1400;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.wiersz
+{
+    width: 1100px;
+    border-top: 3px solid #3b3b3b;
+    border-radius: 4px;
+    background-color: #1f1f1f;
+}
+.aktor
+{
+    float: left;
+    width: 100px;
+    padding: 10px;
+}
+.aktor > img
+{
+display: block;
+border-radius: 3px;
+border: 1px solid #3b3b3b;
+
+}
+.postacie
+{
+    float: left;
+    width: 820px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 50px;
+}
+.nazwapostaci
+{
+    font-weight: 700;
+}
+#gal
+{
+    width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.screen
+{
+    float: left;
+    width: 330px;
+    padding: 10px;
+    height: 214;
+}
+.screen>img
+{
+    width: 330px;
+    border-radius: 2px;
+}
+
+.zwiastun
+{
+    float:left;
+    margin: 30px;
+    background-color: #1f1f1f;
+    width: 450px;
+    height: 350px;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+.nazwaZw
+{
+    text-align: center;
+    padding: 20px;
+    height: 40px;
+}
+.yt
+{
+    width: 450px;
+}
+.yt > iframe
+{
+    width: 450px;
+    height: 291px;
+}
+.recenzja
+{
+    width: 530px;
+    background-color: #1f1f1f;
+    float: left;
+    margin:10px;
+}
+.tresc{
+    text-align: justify;
+    padding: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.uzytkownik
+{
+    background-color: #9b5800;
+    padding: 20px;
+    border-radius: 5px;
+}
+.uzytkownik > img
+{
+    float: left;
+    border-radius: 100px;
+}
+.nazwauzytkownika{
+    float: left;
+    padding: 10px;
+}
+.gwiazdka
+{
+    width: 20px;
+    height: 20px;
+}
+.ocena{
+    padding: 20px;
+    text-align: center;
+    background-color: #292929;
+}
+
+.rek
+{
+    width: 1100px;
+    background-color: #2d2d2d;
+    margin-bottom: 30px;
+    
+}
+.rek:hover
+{
+
+    background-color: #4d4d4d;
+
+    
+}
+
+.rekOpis
+{
+    float: left;
+    width: 740px;
+    padding: 30px;
+
+}
+.rekScreen
+{
+    float: left;
+    width: 270px;
+    padding: 15px;
+
+}
+.rekScreen > img
+{
+    width: 270px;
+    height: 160px;
+
+}
+.linkk
+{
+    font-weight: 700;
+    font-size: 30px;
+    color :rgb(255, 255, 0);
+    margin-bottom: 5px;
+}
+#article > a
+{
+    color: aliceblue;
+    text-decoration: none;
+}
