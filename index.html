@@ -5,6 +5,7 @@
     <title>Strona główna</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css\fontello.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Chau+Philomene+One|Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
@@ -46,14 +47,35 @@
             <a href="rekomendacje.html">Rekomendacje</a>
         </div>
         <div style="clear: both;"></div>
-        
-        
+
+
         <div id="ikonkaLogowania">
             <i class="icon-user"></i>
 
         </div>
         <div style="clear: both;"></div>
+        <div id="logowanie">
+            <form action="logowanie.php" method="POST">
+                Login:
+                <br>
+                <input type="text" name="login">
+                <br>
+                <br> Hasło:
+                <br>
+                <input type="password" name="haslo">
+                <br><br>
+                <input type="submit" value="Zaloguj">
+                <br>
 
+            </form>
+<script>
+    $("#logowanie").hide();
+        $("#ikonkaLogowania").click(function(){
+        $("#logowanie").toggle(50);
+    });
+</script>
+        </div>
+        <div style="clear: both;"></div>
         <article>
 
         </article>

@@ -17,6 +17,11 @@ body{
     text-align: right;
     padding: 10px;
 }
+#logowanie{
+    float: right;
+    text-align: left;
+    padding: 10px;
+}
 .ikona {
     margin: 5px;
     width: 140px;
