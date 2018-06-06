@@ -56,13 +56,13 @@ if ($conn->connect_error) {
 
 
 
-
+// ZABEZPIECZENIE PRZED WSTRZYKIWANIEM SQLA
     $login = htmlentities($login, ENT_QUOTES, "UTF-8");
     $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
     $email = htmlentities($email, ENT_QUOTES, "UTF-8");
 
-
-    $result = @$conn->query(
+//DODANIE DO BAZY DANYCH
+    $result = $conn->query(
                     sprintf("INSERT INTO users (login, haslo, email) VALUES ('%s','%s','%s')"
                             , mysqli_real_escape_string($conn, $login)
                             , mysqli_real_escape_string($conn, $haslo)

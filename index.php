@@ -19,7 +19,7 @@ session_start();
             <header>
                 <img src="obrazki/zombie.png" style="display: block;" class="ikona" />
                 <div id="tytul">
-                    <a href="index.html">THE WALKING DEAD</a>
+                    <a href="index.php">THE WALKING DEAD</a>
                 </div>
                 <img src="obrazki/zombie2.png" style="display: block;" class="ikona" />
                 <div style="clear: both"></div>
@@ -58,7 +58,7 @@ session_start();
             if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] == false)) {
                 echo <<<EOL
                     <div id="ikonkaLogowania">
-                        <i class="icon-user"></i>
+                        <i class="icon-user" style="size: 300%;"></i>
                     </div>
                     <div style="clear: both;"></div>
                     <div id="logowanie">
@@ -78,9 +78,8 @@ session_start();
                         Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
                     </div>                
 EOL;
-            }else{
-                echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
-                
+            } else {
+                echo "<p>Witaj " . $_SESSION['user'] . '! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
             }
             ?>
             <script>
@@ -89,7 +88,7 @@ EOL;
                     $("#logowanie").toggle(50);
                 });
             </script>
-            
+
             <article>
 
             </article>
@@ -97,9 +96,28 @@ EOL;
             <footer>
 
             </footer>
+
+
         </div>
 
         <div style="clear: both;"></div>
+        <!-- Side bar -->
+        <div class="sidebar">
+            <div class="oAutorze">
+                <h3>Autor</h3>
+                <img id="avatar" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p240x240/14203298_1158453020868367_5644073247565590115_n.jpg?_nc_cat=0&oh=2e0a8ceb48b9b4313397580930373b69&oe=5BB57974" >
+                <p>Cześć! Mam na imię Hubert, mam 21 lat i jestem studentem UPH Siedlce. 
+                Interesuje się programowaniem i serialami. 
+                Moim ulubionym jest The Walking Dead i dlatego zdecydowalem się stworzyć ten portal.</p>
+            </div>
+            <div id="serwisy">
+                <i class="icon-facebook-squared"></i>
+                <i class="icon-github-circled"></i>
+                <i class="icon-youtube-play"></i>
+                <i class="icon-icon-twitch"></i>
+                <i class="icon-spotify"></i>
+            </div>
+        </div>
     </body>
 
 </html>

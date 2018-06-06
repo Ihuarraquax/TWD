@@ -1,5 +1,5 @@
 body{
-    background-color: #000000;
+    background-image: url("binding_dark.png");
     color: aliceblue;
     margin: 0px;
     padding: 0px;
@@ -263,8 +263,59 @@ footer
     color :rgb(255, 255, 0);
     margin-bottom: 5px;
 }
-#article > a
+article > a
 {
     color: aliceblue;
     text-decoration: none;
+}
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 15%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 15px;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+
+    font-family: 'Lato', sans-serif;
+}
+
+/* The navigation menu links */
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar h3{
+    text-align: center;
+}
+
+#avatar{
+    float: left;
+    border-radius: 150px;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    padding-right: 15px;
+}
+.oAutorze{
+    background-color: #26413C;
+    padding: 15px;
+    padding-top: 5px;
+    border-radius: 5px;
+    
+}
+.oAutorze p{
+    text-align: left;
+    
 }
