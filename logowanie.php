@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 // sprawdzenie czy dane zostaly wyslane postem
 if ((!isset($_POST['login'])) || (!isset($_POST['haslo']))) {
     header('Location: index.php');
     exit();
+    echo "POST nie dotarł";
 }
 
 
@@ -25,14 +26,15 @@ if ($conn->connect_error) {
     $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
 
     if ($result = @$conn->query(
-                    sprintf("SELECT * FROM users WHERE login='%s' AND haslo='%s'", mysqli_real_escape_string($polaczenie, $login), mysqli_real_escape_string($polaczenie, $haslo)))) {
+                    sprintf("SELECT * FROM users WHERE login='%s' AND haslo='%s'", mysqli_real_escape_string($conn, $login), mysqli_real_escape_string($conn, $haslo)))) {
 
-        $ilu_userow = $rezultat->num_rows;
+        $ilu_userow = $result->num_rows;
         if ($ilu_userow > 0) {
-            session_start();
             $_SESSION['zalogowany'] = true;
+            echo "Zalogowany";
+            header('Location: index.php');
         } else {
-            $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
+            echo "zle passy";
             header('Location: index.php');
         }
     }
