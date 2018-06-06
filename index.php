@@ -54,52 +54,41 @@ session_start();
             </div>
             <div style="clear: both;"></div>
 
-<?php
-
-
-
-
-
-
-
-
-if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany']==false)){
-
-    echo <<<EOL
-            <div id="ikonkaLogowania">
-                <i class="icon-user"></i>
-
-            </div>
-            <div style="clear: both;"></div>
-            <div id="logowanie">
-                <form action="logowanie.php" method="POST">
-                    Login:
-                    <br>
-                    <input type="text" name="login">
-                    <br>
-                    <br> Hasło:
-                    <br>
-                    <input type="password" name="haslo">
-                    <br>
-                    <br>
-                    <input type="submit" value="Zaloguj">
-                    <br>
-
-                </form>
-
-            </div>
-                
-    
+            <?php
+            if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] == false)) {
+                echo <<<EOL
+                    <div id="ikonkaLogowania">
+                        <i class="icon-user"></i>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div id="logowanie">
+                        <form action="logowanie.php" method="POST">
+                            Login:
+                            <br>
+                            <input type="text" name="login">
+                            <br>
+                            <br> Hasło:
+                            <br>
+                            <input type="password" name="haslo">
+                            <br>
+                            <br>
+                            <input type="submit" value="Zaloguj">
+                            <br>
+                        </form>
+                    </div>                
 EOL;
-}
-?>
+            }else{
+                echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+                
+            }
+            ?>
             <script>
                 $("#logowanie").hide();
                 $("#ikonkaLogowania").click(function () {
                     $("#logowanie").toggle(50);
                 });
             </script>
-            <div style="clear: both;"></div>
+            
             <article>
 
             </article>
