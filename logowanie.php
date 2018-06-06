@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 // sprawdzenie czy dane zostaly wyslane postem
 if ((!isset($_POST['login'])) || (!isset($_POST['haslo']))) {
@@ -31,10 +32,10 @@ if ($conn->connect_error) {
         $ilu_userow = $result->num_rows;
         if ($ilu_userow > 0) {
             $_SESSION['zalogowany'] = true;
-            
+
             $wiersz = $result->fetch_assoc();
             $_SESSION['user'] = $wiersz['login'];
-            
+
             echo "Zalogowany";
             header('Location: index.php');
         } else {
@@ -45,12 +46,4 @@ if ($conn->connect_error) {
 }
 
 $conn->close();
-
-
-
-
-
-
-
-
 ?>

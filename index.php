@@ -65,16 +65,17 @@ session_start();
                         <form action="logowanie.php" method="POST">
                             Login:
                             <br>
-                            <input type="text" name="login">
+                            <input type="text" name="login" required>
                             <br>
                             <br> Hasło:
                             <br>
-                            <input type="password" name="haslo">
+                            <input type="password" name="haslo" required>
                             <br>
                             <br>
                             <input type="submit" value="Zaloguj">
                             <br>
-                        </form>
+                        </form><br>
+                        Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
                     </div>                
 EOL;
             }else{
