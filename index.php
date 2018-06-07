@@ -104,19 +104,21 @@ EOL;
         <!-- Side bar -->
         <div class="sidebar">
             <div class="oAutorze">
-                <h3>Autor</h3>
+                <h3>Zdanko o autorze</h3>
                 <img id="avatar" src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-1/p240x240/14203298_1158453020868367_5644073247565590115_n.jpg?_nc_cat=0&oh=2e0a8ceb48b9b4313397580930373b69&oe=5BB57974" >
-                <p>Cześć! Mam na imię Hubert, mam 21 lat i jestem studentem UPH Siedlce. 
-                Interesuje się programowaniem i serialami. 
-                Moim ulubionym jest The Walking Dead i dlatego zdecydowalem się stworzyć ten portal.</p>
+                <p>Cześć! Mam na imię Hubert i jestem studentem UPH Siedlce. 
+                    Interesuje się programowaniem i serialami. 
+                    Moim ulubionym jest The Walking Dead i dlatego zdecydowalem się stworzyć ten portal.</p>
+                <div id="serwisy">
+                    <div id="fb"><i class="icon-facebook-squared"></i></div>
+                    <div id="github"><i class="icon-github-circled"></i></div>
+                    <div id="yt"><i class="icon-youtube-play"></i></div>
+                    <div id="spotify"><i class="icon-spotify"></i></div>
+                    <div style="float: none;clear:both;"></div>
+                </div>
             </div>
-            <div id="serwisy">
-                <i class="icon-facebook-squared"></i>
-                <i class="icon-github-circled"></i>
-                <i class="icon-youtube-play"></i>
-                <i class="icon-icon-twitch"></i>
-                <i class="icon-spotify"></i>
-            </div>
+
+
         </div>
     </body>
 

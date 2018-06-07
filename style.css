@@ -298,6 +298,7 @@ article > a
 
 .sidebar h3{
     text-align: center;
+    letter-spacing: 2px;
 }
 
 #avatar{
@@ -313,9 +314,51 @@ article > a
     padding: 15px;
     padding-top: 5px;
     border-radius: 5px;
-    
+
 }
 .oAutorze p{
     text-align: left;
+}
+
+#serwisy div{
+    text-align: center;
+    color: #ddd;
+    font-size: 30px;
+    width: 63px;
+    float: left;
+    color: #39635b
+}
+#fb{
     
+    
+}
+#fb:hover
+{
+    color: #3B5998;
+}
+
+#github{
+    
+
+}
+#github:hover
+{
+    color: #fff;
+}
+
+#yt{
+    
+
+}
+#yt:hover
+{
+    color: #ff0000;
+}
+
+#spotify{
+
+}
+#spotify:hover
+{
+    color: #1DB954;
 }
