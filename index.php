@@ -79,7 +79,7 @@ session_start();
                     </div>                
 EOL;
             } else {
-                echo "<p>Witaj " . $_SESSION['user'] . '! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+                echo '<div id="panelUzytkownika">Witaj ' . $_SESSION['user'] . '! [ <a href="logout.php">Wyloguj się!</a> ]</p></div><div style="clear: both;"></div>';
             }
             ?>
             <script>

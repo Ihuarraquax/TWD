@@ -18,9 +18,16 @@ body{
     padding: 10px;
 }
 #logowanie{
+    border-radius: 5px;
+    background-color: rgb(1, 104, 61);
     float: right;
     text-align: left;
+    padding: 30px;
+}
+#panelUzytkownika{
+    float: right;
     padding: 10px;
+    margin-top: 15;
 }
 .ikona {
     margin: 5px;
@@ -291,10 +298,7 @@ article > a
     display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-    color: #f1f1f1;
-}
+
 
 .sidebar h3{
     text-align: center;
@@ -329,8 +333,8 @@ article > a
     color: #39635b
 }
 #fb{
-    
-    
+
+
 }
 #fb:hover
 {
@@ -338,7 +342,7 @@ article > a
 }
 
 #github{
-    
+
 
 }
 #github:hover
@@ -347,7 +351,7 @@ article > a
 }
 
 #yt{
-    
+
 
 }
 #yt:hover
