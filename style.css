@@ -306,12 +306,13 @@ article > a
 }
 
 #avatar{
+    border: 3px solid #39635b;
     float: left;
     border-radius: 150px;
     width: 100px;
     height: 100px;
-    padding: 5px;
-    padding-right: 15px;
+    margin: 5px;
+    margin-right: 15px;
 }
 .oAutorze{
     background-color: #26413C;
@@ -330,7 +331,7 @@ article > a
     font-size: 30px;
     width: 63px;
     float: left;
-    color: #39635b
+    color: #39635b;
 }
 #fb{
 
@@ -338,7 +339,7 @@ article > a
 }
 #fb:hover
 {
-    color: #3B5998;
+    color: #4267b2;
 }
 
 #github{
@@ -365,4 +366,49 @@ article > a
 #spotify:hover
 {
     color: #1DB954;
+}
+#sekcjaKomentarzy{
+    min-height: 300px;
+}
+.komentarz{
+    background-color: #1DB954;
+    width: 100%;
+    border-radius: 4px;
+    min-height: 100px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.kAvatar{
+    padding: 0;
+    margin: 0;
+    float: left;
+
+    height: 100px;
+}
+.kAvatar .icon-user:before{
+    font-size: 100px;
+    border: solid 2px #39635b;
+    border-radius: 2px;
+    background-color: #26413C;
+}
+.kTytul{
+    min-height: 20px;
+    float: left;
+    width: 80%;
+}
+.kNick{
+    float: left;
+    width: 50%;
+}
+.kData{
+    text-align: right;
+    float: right;
+    width: 50%;
+}
+.kTresc{
+    text-align: left;
+    min-height: 80px;
+    float: left;
+    width: 80%;
 }

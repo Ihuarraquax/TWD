@@ -7,8 +7,8 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <title>Strona główna</title>
-        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css\fontello.css">
+        <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Chau+Philomene+One|Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
 
@@ -58,7 +58,7 @@ session_start();
             if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] == false)) {
                 echo <<<EOL
                     <div id="ikonkaLogowania">
-                        <i class="icon-user" style="size: 300%;"></i>
+                        <i class="icon-user" style="font-size: 50px;"></i>
                     </div>
                     <div style="clear: both;"></div>
                     <div id="logowanie">
@@ -92,7 +92,45 @@ EOL;
             <article>
 
             </article>
+            <div id="sekcjaKomentarzy">
+                <?php
+                require_once "connect.php";
+                $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
+                $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE p.tytul = 'str glowna' AND u.id = k.idKomentujacego";
+
+                if ($result = @$conn->query($sql)) {
+                    $ile = $result->num_rows;
+                    echo $ile;
+                    if ($ile == 0) {
+                        echo "Brak komentarzy. Bądź pierwszy!";
+                    }
+
+                    for ($i = 0; $i < $ile; $i++) {
+                        $wiersz = $result->fetch_assoc();
+
+                        echo '<div class="komentarz">';
+                        echo '<div class="kAvatar"> ';
+                        echo '<i class="icon-user"></i>';
+                        echo '</div>';
+                        echo '<div class="kTytul">';
+                        echo '<div class="kNick">';
+                        echo $wiersz['login'];
+                        echo '</div>';
+                        echo '<div class = "kData">';
+                        echo $wiersz['data'];
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class = "kTresc">';
+                        echo $wiersz['tresc'];
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div style="clear: both;"></div>';
+                    }
+                }
+                ?>
+
+            </div>
             <footer>
 
             </footer>
@@ -101,7 +139,6 @@ EOL;
         </div>
 
         <div style="clear: both;"></div>
-        <!-- Side bar -->
         <div class="sidebar">
             <div class="oAutorze">
                 <h3>Zdanko o autorze</h3>
