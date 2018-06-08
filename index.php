@@ -13,14 +13,25 @@ $_SESSION['OstatniaStrona'] = "index.php";
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Chau+Philomene+One|Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
 
+
     </head>
 
     <body>
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v3.0';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
         <div id="container">
             <header>
                 <img src="obrazki/zombie.png" style="display: block;" class="ikona" />
                 <div id="tytul">
-                    <a href="index.php">THE WALKING DEAD</a>
+                    <a href="index.php">Umieralnia-TWD</a>
                 </div>
                 <img src="obrazki/zombie2.png" style="display: block;" class="ikona" />
                 <div style="clear: both"></div>
@@ -134,8 +145,7 @@ EOL;
                 </div>
                 <div id="dodawanieKomentarzy">
                     <?php
-                    
-                    if (isset($_SESSION['zalogowany'])&&$_SESSION['zalogowany']) {
+                    if (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']) {
                         echo '<div id="dkPanel">';
                         echo '    <h2>';
                         echo '        Dodaj Komentarz!';
@@ -144,7 +154,7 @@ EOL;
                         echo '        <form action="dodajKomentarz.php" method="get">';
                         echo '            ';
                         echo '            <textarea id="dkTextarea" name="komentarz"></textarea><br>';
-                        echo '                Autor: '.$_SESSION['user'].'<br>';
+                        echo '                Autor: ' . $_SESSION['user'] . '<br>';
                         echo '            ';
                         echo '            <input id="dkButton" type="submit" value="Skończyłem!">';
                         echo '            <div style="clear:both;"></div>';
@@ -152,8 +162,7 @@ EOL;
                         echo '        </form>';
                         echo '    </div>';
                         echo '</div>';
-                    }
-                    else{
+                    } else {
                         echo '<div id="dkPanel">';
                         echo '    <h2>';
                         echo '        Zaloguj się aby dodać komentarz!';
@@ -163,9 +172,7 @@ EOL;
                     ?>
                 </div>
             </div>
-            <footer>
 
-            </footer>
 
 
         </div>
@@ -186,9 +193,40 @@ EOL;
                     <div style="float: none;clear:both;"></div>
                 </div>
             </div>
-
-
         </div>
+
+
+        <footer>
+            <div id="containerStopka">
+
+                <div id="sInfo">
+                    <h3> Witamy na Umieralni-TWD</h3>
+                    Strona powstała z wielkiej miłości do serialu The Walking Dead. 
+                    Głównym jej celem jest pozwolić społeczności dyskutować na temat serialu. Pozwala nam na to system komentarzy. 
+                    Kazda strona ma swoją oddzielną sekcję. Nie wachaj się i dodaj coś od siebie!
+                </div>
+                <!--Your Group Plugin for the Web code-->
+                <div id="sFacebook">
+                    <div class="fb-page" data-href="https://www.facebook.com/WalkingDeadPoland/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Biblioteka-G%C5%82%C3%B3wna-Uniwersytetu-Przyrodniczo-Humanistycznego-w-Siedlcach-143598862371485/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Biblioteka-G%C5%82%C3%B3wna-Uniwersytetu-Przyrodniczo-Humanistycznego-w-Siedlcach-143598862371485/">Biblioteka Główna Uniwersytetu Przyrodniczo-Humanistycznego w Siedlcach</a></blockquote></div>
+                </div>
+                <div id="sFormulka">
+                    Copyright © 2018 Hubert Zabłocki. All rights reserved.
+                </div>
+                <div style="clear:both;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </footer>
     </body>
 
 </html>

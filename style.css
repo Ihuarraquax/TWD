@@ -57,6 +57,7 @@ nav{
     font-family: 'Chau Philomene One', sans-serif;
     font-size: 85px;
     text-align: center;
+    letter-spacing: 5px;
     padding: 20px;
 }
 
@@ -104,14 +105,42 @@ article
 
 footer
 {
+    border-top: 5px solid #111;
+    min-height: 200px;
     margin-top: 10px;
-    background-color: #1f1400;
+    background-color: #000;
     font-size: 20px;
     text-align: center;
     padding: 5px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+    width: 98.5vw;
+}
+#containerStopka{
+    height: 500px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    
+}
+#sInfo{
+    color: #777 ;
+    text-align: left;
+    padding: 0px 30px 0px 0px;
+    height: 100%;
+    float: left;
+    width: 400px;
+    border-right: 5px dotted #111;
+}
+#sFacebook{
+    float: left;
+    width: 400px;
+    border-right: 5px dotted #111;
+}
+#sFormulka{
+    font-size: 12px;
+    color: #666;
+    float: left;
+    width: 350px;
 }
 
 .wiersz
