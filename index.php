@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['OstatniaStrona'] = "index.php";
 ?>
 
 <html>
@@ -98,7 +99,7 @@ EOL;
                     require_once "connect.php";
                     $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
-                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE p.tytul = 'str glowna' AND u.id = k.idKomentujacego";
+                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE p.id = 3 AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
 
                     if ($result = @$conn->query($sql)) {
                         $ile = $result->num_rows;
@@ -124,6 +125,7 @@ EOL;
                             echo '<div class = "kTresc">';
                             echo $wiersz['tresc'];
                             echo '</div>';
+                            echo '<div style="clear: both;"></div>';
                             echo '</div>';
                             echo '<div style="clear: both;"></div>';
                         }
@@ -131,26 +133,34 @@ EOL;
                     ?>
                 </div>
                 <div id="dodawanieKomentarzy">
-                    <div id="dkPanel">
-                        <h2>
-                            Dodaj Komentarz!
-                        </h2>
-                        <div id="dkFormularz">
-                            <form action="dodajKomentarz.php" method="post">
-                                
-                                <textarea id="dkTextarea" name="komentarz">
-                                    
-                                </textarea><br><br>
-                                    
-                                
-                                <input id="dkButton" type="submit" value="Skończyłem!">
-                                <div style="clear:both;"></div>
-                                
-                            </form>
-                        </div>
-                    </div>
+                    <?php
                     
-                    
+                    if (isset($_SESSION['zalogowany'])&&$_SESSION['zalogowany']) {
+                        echo '<div id="dkPanel">';
+                        echo '    <h2>';
+                        echo '        Dodaj Komentarz!';
+                        echo '    </h2>';
+                        echo '    <div id="dkFormularz">';
+                        echo '        <form action="dodajKomentarz.php" method="get">';
+                        echo '            ';
+                        echo '            <textarea id="dkTextarea" name="komentarz"></textarea><br>';
+                        echo '                Autor: '.$_SESSION['user'].'<br>';
+                        echo '            ';
+                        echo '            <input id="dkButton" type="submit" value="Skończyłem!">';
+                        echo '            <div style="clear:both;"></div>';
+                        echo '            ';
+                        echo '        </form>';
+                        echo '    </div>';
+                        echo '</div>';
+                    }
+                    else{
+                        echo '<div id="dkPanel">';
+                        echo '    <h2>';
+                        echo '        Zaloguj się aby dodać komentarz!';
+                        echo '    </h2>';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </div>
             <footer>

@@ -35,6 +35,7 @@ if ($conn->connect_error) {
 
             $wiersz = $result->fetch_assoc();
             $_SESSION['user'] = $wiersz['login'];
+            $_SESSION['userID'] = $wiersz['id'];
 
             echo "Zalogowany";
             header('Location: index.php');
