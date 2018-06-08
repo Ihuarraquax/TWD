@@ -4,6 +4,7 @@ body{
     margin: 0px;
     padding: 0px;
     border-radius: 2px;
+    font-family: 'Lato', sans-serif;
 }
 
 #container {
@@ -371,10 +372,11 @@ article > a
     min-height: 300px;
 }
 .komentarz{
+    border: 2px solid #39635b;
     background-color: #1DB954;
-    width: 100%;
     border-radius: 4px;
     min-height: 100px;
+    margin-right: 0;
     margin-bottom: 5px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -383,7 +385,6 @@ article > a
     padding: 0;
     margin: 0;
     float: left;
-
     height: 100px;
 }
 .kAvatar .icon-user:before{
@@ -393,22 +394,63 @@ article > a
     background-color: #26413C;
 }
 .kTytul{
+    padding-bottom: 1px;
     min-height: 20px;
+    width: 75%;
     float: left;
-    width: 80%;
+    border-bottom: 2px dotted #39635b;
+    border-radius: 3px;
 }
 .kNick{
+    text-align: left;
     float: left;
     width: 50%;
+    color: #383838;
+    font-size: 20px;
+    font-weight: bold;
 }
 .kData{
     text-align: right;
     float: right;
     width: 50%;
+    color: #000000;
 }
 .kTresc{
+    padding-top: 5px;
     text-align: left;
     min-height: 80px;
     float: left;
+    width: 75%;
+    color: #E6E6E6;
+}
+
+#wyswietlanieKomentarzy{
+    float: left;
+    width: 60%;
+}
+#dodawanieKomentarzy{
+    float: right;
+    width: 40%;
+}
+#dkPanel{
+    
+    min-height: 300px;
+    margin: 0px 0px 30px 20px;
+    padding: 2px 2px 3px 2px;
+    border-radius: 5px;
+    
+    background-color: #26413C;
+}
+#dkPanel h2{
+    letter-spacing: 1px;
+    width: 100%;
+}
+#dkTextarea{
     width: 80%;
+    height: 200px;
+    resize: none;
+}
+#dkButton{
+    float: right;
+    margin-right: 47px;
 }

@@ -93,43 +93,65 @@ EOL;
 
             </article>
             <div id="sekcjaKomentarzy">
-                <?php
-                require_once "connect.php";
-                $conn = @new mysqli($host, $db_user, $db_password, $db_name);
+                <div id="wyswietlanieKomentarzy">
+                    <?php
+                    require_once "connect.php";
+                    $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
-                $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE p.tytul = 'str glowna' AND u.id = k.idKomentujacego";
+                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE p.tytul = 'str glowna' AND u.id = k.idKomentujacego";
 
-                if ($result = @$conn->query($sql)) {
-                    $ile = $result->num_rows;
-                    echo $ile;
-                    if ($ile == 0) {
-                        echo "Brak komentarzy. Bądź pierwszy!";
+                    if ($result = @$conn->query($sql)) {
+                        $ile = $result->num_rows;
+                        if ($ile == 0) {
+                            echo "Brak komentarzy. Bądź pierwszy!";
+                        }
+
+                        for ($i = 0; $i < $ile; $i++) {
+                            $wiersz = $result->fetch_assoc();
+
+                            echo '<div class="komentarz">';
+                            echo '<div class="kAvatar"> ';
+                            echo '<i class="icon-user"></i>';
+                            echo '</div>';
+                            echo '<div class="kTytul">';
+                            echo '<div class="kNick">';
+                            echo $wiersz['login'];
+                            echo '</div>';
+                            echo '<div class = "kData">';
+                            echo $wiersz['data'];
+                            echo '</div>';
+                            echo '</div>';
+                            echo '<div class = "kTresc">';
+                            echo $wiersz['tresc'];
+                            echo '</div>';
+                            echo '</div>';
+                            echo '<div style="clear: both;"></div>';
+                        }
                     }
-
-                    for ($i = 0; $i < $ile; $i++) {
-                        $wiersz = $result->fetch_assoc();
-
-                        echo '<div class="komentarz">';
-                        echo '<div class="kAvatar"> ';
-                        echo '<i class="icon-user"></i>';
-                        echo '</div>';
-                        echo '<div class="kTytul">';
-                        echo '<div class="kNick">';
-                        echo $wiersz['login'];
-                        echo '</div>';
-                        echo '<div class = "kData">';
-                        echo $wiersz['data'];
-                        echo '</div>';
-                        echo '</div>';
-                        echo '<div class = "kTresc">';
-                        echo $wiersz['tresc'];
-                        echo '</div>';
-                        echo '</div>';
-                        echo '<div style="clear: both;"></div>';
-                    }
-                }
-                ?>
-
+                    ?>
+                </div>
+                <div id="dodawanieKomentarzy">
+                    <div id="dkPanel">
+                        <h2>
+                            Dodaj Komentarz!
+                        </h2>
+                        <div id="dkFormularz">
+                            <form action="dodajKomentarz.php" method="post">
+                                
+                                <textarea id="dkTextarea" name="komentarz">
+                                    
+                                </textarea><br><br>
+                                    
+                                
+                                <input id="dkButton" type="submit" value="Skończyłem!">
+                                <div style="clear:both;"></div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
             </div>
             <footer>
 
