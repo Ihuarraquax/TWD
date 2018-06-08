@@ -26,7 +26,7 @@ $conn = @new mysqli($host, $db_user, $db_password, $db_name);
             <header>
                 <img src="obrazki/zombie.png" style="display: block;" class="ikona" />
                 <div id="tytul">
-                    <a href="index.html">THE WALKING DEAD</a>
+                    <a href="index.php">Umieralnia-TWD</a>
                 </div>
                 <img src="obrazki/zombie2.png" style="display: block;" class="ikona" />
                 <div style="clear: both"></div>

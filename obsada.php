@@ -1,29 +1,25 @@
 <?php
 session_start();
-$_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
-
-
-
-
+$_SESSION['OstatniaStrona'] = "obsada.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
 //DODANIE KAZDEJ STRONY Z OSOBNA I ZAMIENIENE JEJ NAZWY NA ODPOWIADAJACE ID Z BAZY DANYCH
-    if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 3;
-    }
-    if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 4;
-    }
-    if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 5;
-    }
-    if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 6;
-    }
-    if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 7;
-    }
-    if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 8;
-    }
+if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 3;
+}
+if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 4;
+}
+if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 5;
+}
+if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 6;
+}
+if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 7;
+}
+if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 8;
+}
 ?>
 
 <html>
@@ -110,9 +106,8 @@ $_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZD
                             <input type="submit" value="Zaloguj">
                             <br>
                         </form><br>
-                        
                         Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
-                    </div>      
+                    </div>        
                         <div style="clear:both;"></div>
 EOL;
             } else {
@@ -127,7 +122,99 @@ EOL;
             </script>
 
             <article>
-
+                <h1 style="text-align: center; font-weight:700;">Obsada:</h1>
+            <br>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/andrew.jpg" />
+                </div>
+                <div class="postacie">
+                    Andrew Lincoln jako:
+                    <span class="nazwapostaci"> Rick Grimes</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/rick.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/laurie.jpg" />
+                </div>
+                <div class="postacie">
+                    Laurie Holden jako:
+                    <span class="nazwapostaci"> Andrea</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/andrea.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/norman.jpg" />
+                </div>
+                <div class="postacie">
+                    Norman Reedus jako:
+                    <span class="nazwapostaci"> Daryl Dixon</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/daryl.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/sarah.jpg" />
+                </div>
+                <div class="postacie">
+                    Sarah Wayne Callies jako:
+                    <span class="nazwapostaci"> Lori Grimes</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/lori.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/steven.jpg" />
+                </div>
+                <div class="postacie">
+                    Steven Yeun jako:
+                    <span class="nazwapostaci"> Glenn Rhee</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/glenn.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/jon.jpg" />
+                </div>
+                <div class="postacie">
+                    Jon Bernthal jako:
+                    <span class="nazwapostaci">Shane Walsh</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/shane.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="wiersz">
+                <div class="aktor">
+                    <img src="obrazki/melissa.jpg" />
+                </div>
+                <div class="postacie">
+                        Melissa McBride jako:
+                    <span class="nazwapostaci">Carol Peletier</span>
+                </div>
+                <div class="aktor" style="float: right;">
+                    <img src="obrazki/carol.jpg" />
+                </div>
+                <div style="clear: both;"></div>
+            </div>
             </article>
             <div id="sekcjaKomentarzy">
                 <div id="wyswietlanieKomentarzy">
@@ -136,7 +223,6 @@ EOL;
                     $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
                     $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = ".$_SESSION['OstatniaStrona']." AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
-
                     if ($result = @$conn->query($sql)) {
                         $ile = $result->num_rows;
                         if ($ile == 0) {

@@ -31,6 +31,7 @@ body{
     float: right;
     text-align: left;
     padding: 30px;
+    z-index: 100;
 }
 #panelUzytkownika{
     float: right;
@@ -498,4 +499,12 @@ article > a
 #dkButton{
     float: right;
     margin-right: 47px;
+}
+#panelUzytkownika{
+    font-size: 20px;
+    color: #bbb;
+}
+#panelUzytkownika  a{
+    text-decoration: none;
+    color: #eee;
 }

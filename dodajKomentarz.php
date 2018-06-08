@@ -14,10 +14,7 @@ if ($conn->connect_error) {
     $userID = $_SESSION['userID'];
     $skad = $_SESSION['OstatniaStrona'];
 
-    //DODANIE KAZDEJ STRONY Z OSOBNA I ZAMIENIENE JEJ NAZWY NA ODPOWIADAJACE ID Z BAZY DANYCH
-    if ($skad == "index.php") {//STRONA GLOWNA MA ID 3
-        $skad = 3;
-    }
+    
 
 
 

@@ -38,10 +38,10 @@ if ($conn->connect_error) {
             $_SESSION['userID'] = $wiersz['id'];
 
             echo "Zalogowany";
-            header('Location: index.php');
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         } else {
             echo "zle passy";
-            header('Location: index.php');
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
 }

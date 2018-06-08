@@ -1,29 +1,25 @@
 <?php
 session_start();
-$_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
-
-
-
-
+$_SESSION['OstatniaStrona'] = "zwiastuny.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
 //DODANIE KAZDEJ STRONY Z OSOBNA I ZAMIENIENE JEJ NAZWY NA ODPOWIADAJACE ID Z BAZY DANYCH
-    if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 3;
-    }
-    if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 4;
-    }
-    if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 5;
-    }
-    if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 6;
-    }
-    if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 7;
-    }
-    if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 8;
-    }
+if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 3;
+}
+if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 4;
+}
+if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 5;
+}
+if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 6;
+}
+if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 7;
+}
+if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 8;
+}
 ?>
 
 <html>
@@ -110,9 +106,8 @@ $_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZD
                             <input type="submit" value="Zaloguj">
                             <br>
                         </form><br>
-                        
                         Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
-                    </div>      
+                    </div>    
                         <div style="clear:both;"></div>
 EOL;
             } else {
@@ -127,7 +122,45 @@ EOL;
             </script>
 
             <article>
+                <div class="zwiastun">
+                    <div class="nazwaZw">
+                        The Walking Dead Trailer
+                    </div>
+                    <div class="yt">
+                        <iframe src="https://www.youtube.com/embed/R1v0uFms68U">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="zwiastun">
+                    <div class="nazwaZw">
+                        The Walking Dead Sezon 2
+                    </div>
+                    <div class="yt">
+                        <iframe src="https://www.youtube.com/embed/1OZ0mu8Ey6A">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="zwiastun">
+                    <div class="nazwaZw">
+                        The Walking Dead Sezon 3
+                    </div>
+                    <div class="yt">
 
+                        <iframe src="https://www.youtube.com/embed/KnC9FLhM0WQ">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="zwiastun">
+                    <div class="nazwaZw">
+                        The Walking Dead Sezon 4
+                    </div>
+                    <div class="yt">
+
+                        <iframe src="https://www.youtube.com/embed/QsJqqIXXhI0">
+                        </iframe>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
             </article>
             <div id="sekcjaKomentarzy">
                 <div id="wyswietlanieKomentarzy">
@@ -135,8 +168,7 @@ EOL;
                     require_once "connect.php";
                     $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
-                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = ".$_SESSION['OstatniaStrona']." AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
-
+                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = " . $_SESSION['OstatniaStrona'] . " AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
                     if ($result = @$conn->query($sql)) {
                         $ile = $result->num_rows;
                         if ($ile == 0) {

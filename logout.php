@@ -4,6 +4,6 @@
 	
 	session_unset();
 	
-	header('Location: index.php');
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 ?>

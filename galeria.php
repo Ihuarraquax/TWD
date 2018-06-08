@@ -1,29 +1,25 @@
 <?php
 session_start();
-$_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
-
-
-
-
+$_SESSION['OstatniaStrona'] = "galeria.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
 //DODANIE KAZDEJ STRONY Z OSOBNA I ZAMIENIENE JEJ NAZWY NA ODPOWIADAJACE ID Z BAZY DANYCH
-    if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 3;
-    }
-    if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 4;
-    }
-    if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 5;
-    }
-    if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 6;
-    }
-    if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 7;
-    }
-    if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 8;
-    }
+if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = '3';
+}
+if ($_SESSION['OstatniaStrona'] == "obsada.php") {
+    $_SESSION['OstatniaStrona'] = '4';
+}
+if ($_SESSION['OstatniaStrona'] == "galeria.php") {
+    $_SESSION['OstatniaStrona'] = '5';
+}
+if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {
+    $_SESSION['OstatniaStrona'] = '6';
+}
+if ($_SESSION['OstatniaStrona'] == "recenzje.php") {
+    $_SESSION['OstatniaStrona'] = '7';
+}
+if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {
+    $_SESSION['OstatniaStrona'] = '8';
+}
 ?>
 
 <html>
@@ -110,9 +106,8 @@ $_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZD
                             <input type="submit" value="Zaloguj">
                             <br>
                         </form><br>
-                        
                         Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
-                    </div>      
+                    </div>       
                         <div style="clear:both;"></div>
 EOL;
             } else {
@@ -127,16 +122,38 @@ EOL;
             </script>
 
             <article>
+                <div id="gal">
+                    <div class="screen">
+                        <img src="obrazki/screeny/1.jpg"/>
+                    </div>
+                    <div class="screen">
+                        <img src="obrazki/screeny/2.jpg"/>
+                    </div>
+                    <div class="screen">
+                        <img src="obrazki/screeny/3.jpg"/>
+                    </div>
 
+                    <div class="screen">
+                        <img src="obrazki/screeny/4.jpg"/>
+                    </div>
+                    <div class="screen">
+                        <img src="obrazki/screeny/5.jpg"/>
+                    </div>
+                    <div class="screen">
+                        <img src="obrazki/screeny/6.jpg"/>
+                    </div>
+
+                    <div class="screen"><img src="obrazki/screeny/7.jpg"/></div>
+                    <div class="screen"><img src="obrazki/screeny/8.jpg"/></div>
+                    <div class="screen"><img src="obrazki/screeny/9.jpg"/></div>
+                </div>
             </article>
             <div id="sekcjaKomentarzy">
                 <div id="wyswietlanieKomentarzy">
                     <?php
                     require_once "connect.php";
                     $conn = @new mysqli($host, $db_user, $db_password, $db_name);
-
-                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = ".$_SESSION['OstatniaStrona']." AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
-
+                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = " . $_SESSION['OstatniaStrona'] . " AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
                     if ($result = @$conn->query($sql)) {
                         $ile = $result->num_rows;
                         if ($ile == 0) {
@@ -169,32 +186,32 @@ EOL;
                     ?>
                 </div>
                 <div id="dodawanieKomentarzy">
-                    <?php
-                    if (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']) {
-                        echo '<div id="dkPanel">';
-                        echo '    <h2>';
-                        echo '        Dodaj Komentarz!';
-                        echo '    </h2>';
-                        echo '    <div id="dkFormularz">';
-                        echo '        <form action="dodajKomentarz.php" method="get">';
-                        echo '            ';
-                        echo '            <textarea id="dkTextarea" name="komentarz"></textarea><br>';
-                        echo '                Autor: ' . $_SESSION['user'] . '<br>';
-                        echo '            ';
-                        echo '            <input id="dkButton" type="submit" value="Skończyłem!">';
-                        echo '            <div style="clear:both;"></div>';
-                        echo '            ';
-                        echo '        </form>';
-                        echo '    </div>';
-                        echo '</div>';
-                    } else {
-                        echo '<div id="dkPanel">';
-                        echo '    <h2>';
-                        echo '        Zaloguj się aby dodać komentarz!';
-                        echo '    </h2>';
-                        echo '</div>';
-                    }
-                    ?>
+<?php
+if (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']) {
+    echo '<div id="dkPanel">';
+    echo '    <h2>';
+    echo '        Dodaj Komentarz!';
+    echo '    </h2>';
+    echo '    <div id="dkFormularz">';
+    echo '        <form action="dodajKomentarz.php" method="get">';
+    echo '            ';
+    echo '            <textarea id="dkTextarea" name="komentarz"></textarea><br>';
+    echo '                Autor: ' . $_SESSION['user'] . '<br>';
+    echo '            ';
+    echo '            <input id="dkButton" type="submit" value="Skończyłem!">';
+    echo '            <div style="clear:both;"></div>';
+    echo '            ';
+    echo '        </form>';
+    echo '    </div>';
+    echo '</div>';
+} else {
+    echo '<div id="dkPanel">';
+    echo '    <h2>';
+    echo '        Zaloguj się aby dodać komentarz!';
+    echo '    </h2>';
+    echo '</div>';
+}
+?>
                 </div>
             </div>
 

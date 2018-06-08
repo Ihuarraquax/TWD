@@ -1,29 +1,25 @@
 <?php
 session_start();
-$_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
-
-
-
-
+$_SESSION['OstatniaStrona'] = "rekomendacje.php"; /////////////////// ZMIENIC PRZY KAZDEJ PODSTRONIE
 //DODANIE KAZDEJ STRONY Z OSOBNA I ZAMIENIENE JEJ NAZWY NA ODPOWIADAJACE ID Z BAZY DANYCH
-    if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 3;
-    }
-    if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 4;
-    }
-    if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 5;
-    }
-    if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 6;
-    }
-    if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 7;
-    }
-    if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
-        $_SESSION['OstatniaStrona'] = 8;
-    }
+if ($_SESSION['OstatniaStrona'] == "index.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 3;
+}
+if ($_SESSION['OstatniaStrona'] == "obsada.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 4;
+}
+if ($_SESSION['OstatniaStrona'] == "galeria.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 5;
+}
+if ($_SESSION['OstatniaStrona'] == "zwiastuny.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 6;
+}
+if ($_SESSION['OstatniaStrona'] == "recenzje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 7;
+}
+if ($_SESSION['OstatniaStrona'] == "rekomendacje.php") {//STRONA GLOWNA MA ID 3
+    $_SESSION['OstatniaStrona'] = 8;
+}
 ?>
 
 <html>
@@ -110,9 +106,8 @@ $_SESSION['OstatniaStrona'] = "index.php"; /////////////////// ZMIENIC PRZY KAZD
                             <input type="submit" value="Zaloguj">
                             <br>
                         </form><br>
-                        
                         Nie masz konta? <a href="rejestracja.php">Zarejestruj się!</a>
-                    </div>      
+                    </div>   
                         <div style="clear:both;"></div>
 EOL;
             } else {
@@ -127,7 +122,49 @@ EOL;
             </script>
 
             <article>
+                <h1 style="text-align: center;">Polecane strony</h1>
 
+                <a href="http://www.amc.com/shows/the-walking-dead" target="_blank">
+                    <div class="rek">
+                        <div class="rekOpis">
+                            <div class="linkk">www.amc.com/shows/the-walking-dead </div>
+                            <br>Oficjalna strona serialu
+                            <br> Znajdziesz tam wywiady, opisy odcinków, sklep z koszulkami i wiele innych!
+                        </div>
+
+                        <div class="rekScreen">
+                            <img src="obrazki/screeny/str1.jpg" />
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </a>
+                <a href="http://www.strefawalkingdead.pl/" target="_blank">
+                    <div class="rek">
+                        <div class="rekOpis">
+                            <div class="linkk">www.strefawalkingdead.pl</div>
+                            <br> Polskie forum stympatyków serialu
+                        </div>
+
+                        <div class="rekScreen">
+                            <img src="obrazki/screeny/str2.jpg" />
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </a>
+                <a href="http://www.filmweb.pl/serial/The+Walking+Dead-2010-547035" target="_blank">
+                    <div class="rek">
+                        <div class="rekOpis">
+                            <div class="linkk"> http://www.filmweb.pl/serial/The+Walking+Dead-2010-547035</div>
+                            <br> Profil serialu na Filmwebie
+                            <br/> Wyraź swoją opinię!
+                        </div>
+
+                        <div class="rekScreen">
+                            <img src="obrazki/screeny/str3.jpg" />
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </a>
             </article>
             <div id="sekcjaKomentarzy">
                 <div id="wyswietlanieKomentarzy">
@@ -135,8 +172,7 @@ EOL;
                     require_once "connect.php";
                     $conn = @new mysqli($host, $db_user, $db_password, $db_name);
 
-                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = ".$_SESSION['OstatniaStrona']." AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
-
+                    $sql = "SELECT u.login, k.tresc, k.data FROM komentarze k, users u, posty p WHERE k.idPosta = " . $_SESSION['OstatniaStrona'] . " AND k.idPosta=p.id AND u.id = k.idKomentujacego ORDER BY `k`.`data` DESC";
                     if ($result = @$conn->query($sql)) {
                         $ile = $result->num_rows;
                         if ($ile == 0) {
