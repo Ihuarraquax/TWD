@@ -127,7 +127,7 @@ EOL;
             </script>
 
             <article>
-
+                <img src="ZOMBIE.png" class="center">
             </article>
             <div id="sekcjaKomentarzy">
                 <div id="wyswietlanieKomentarzy">

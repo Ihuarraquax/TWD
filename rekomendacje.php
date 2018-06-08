@@ -127,7 +127,7 @@ EOL;
                 <a href="http://www.amc.com/shows/the-walking-dead" target="_blank">
                     <div class="rek">
                         <div class="rekOpis">
-                            <div class="linkk">www.amc.com/shows/the-walking-dead </div>
+                            <div class="linkk"> AMC.com</div>
                             <br>Oficjalna strona serialu
                             <br> Znajdziesz tam wywiady, opisy odcinków, sklep z koszulkami i wiele innych!
                         </div>
@@ -141,7 +141,7 @@ EOL;
                 <a href="http://www.strefawalkingdead.pl/" target="_blank">
                     <div class="rek">
                         <div class="rekOpis">
-                            <div class="linkk">www.strefawalkingdead.pl</div>
+                            <div class="linkk">Strefawalkingdead.pl</div>
                             <br> Polskie forum stympatyków serialu
                         </div>
 
@@ -154,7 +154,7 @@ EOL;
                 <a href="http://www.filmweb.pl/serial/The+Walking+Dead-2010-547035" target="_blank">
                     <div class="rek">
                         <div class="rekOpis">
-                            <div class="linkk"> http://www.filmweb.pl/serial/The+Walking+Dead-2010-547035</div>
+                            <div class="linkk"> Filmweb.pl</div>
                             <br> Profil serialu na Filmwebie
                             <br/> Wyraź swoją opinię!
                         </div>
