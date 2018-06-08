@@ -443,9 +443,17 @@ article > a
 }
 #dkPanel h2{
     letter-spacing: 1px;
-    width: 100%;
+    border-bottom: 6px dotted #39635b;
+    border-radius: 4px;
+    width: 60%;
+    padding: 0px 20px 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 #dkTextarea{
+    border: 3px solid #39635b;
+    border-radius: 2px;
     width: 80%;
     height: 200px;
     resize: none;
