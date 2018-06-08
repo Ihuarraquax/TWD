@@ -14,9 +14,16 @@ body{
     margin-right: auto;
 }
 #ikonkaLogowania{
+    border: 2px solid #39635b;
+    background-color: #1DB954;
+    border-radius: 4px;
+    color: #222;
+    font-size: 30px;
     float: right;
     text-align: right;
     padding: 10px;
+    text-align: center;
+    margin: 10px 3px 0px 0;
 }
 #logowanie{
     border-radius: 5px;
@@ -62,7 +69,7 @@ nav{
 }
 
 .pozycja{
-    background-color: #001b04;
+    background-color: #333;
     float: left;
     width: 195px;
     border-radius: 5px;

@@ -70,7 +70,7 @@ $_SESSION['OstatniaStrona'] = "index.php";
             if ((!isset($_SESSION['zalogowany'])) || ($_SESSION['zalogowany'] == false)) {
                 echo <<<EOL
                     <div id="ikonkaLogowania">
-                        <i class="icon-user" style="font-size: 50px;"></i>
+                        Zaloguj się!<i class="icon-user" style="font-size: 30px;"></i>
                     </div>
                     <div style="clear: both;"></div>
                     <div id="logowanie">
